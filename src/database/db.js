@@ -1,9 +1,7 @@
 import { MongoClient } from 'mongodb';
-import dotenv from 'dotenv';
+import { MONGO_URI } from '../configs/constants';
 
-dotenv.config();
-
-const mongoClient = new MongoClient(process.env.MONGO_URI);
+const mongoClient = new MongoClient(MONGO_URI);
 
 async function mongo() {
     let db
@@ -15,7 +13,8 @@ async function mongo() {
         return db
 
     } catch (error) {
-         console.logo(error.message);
+        console.log(error.message);
+        return error;
     }
 }
 
