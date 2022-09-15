@@ -14,7 +14,7 @@ const GetProducts = async (req, res) => {
 };
 
 const GetProductWithID = async (req, res) => {
-  const { id } = req.params;
+  const id = req.params.bookId;
 
   if (!id) {
     return res
@@ -23,10 +23,13 @@ const GetProductWithID = async (req, res) => {
   }
 
   try {
-    const book = await db.collection("products").findOne({ _id: ObjectId(id) });
+    const book = await db
+      .collection("products")
+      .findOne({ _id: new ObjectId(id) });
     if (!book) {
-      res.status(404).send("");
+      return res.status(404).send("");
     }
+
     res.status(200).send(book);
   } catch (error) {
     console.error(error);
