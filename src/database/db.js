@@ -1,16 +1,16 @@
 import { MongoClient } from 'mongodb';
-import { MONGO_URI } from '../configs/constants';
+import { MONGO_URI } from '../configs/constants.js';
 
 const mongoClient = new MongoClient(MONGO_URI);
 
 async function mongo() {
-    let db
+    let db;
 
     try {
         await mongoClient.connect();
-        db.mongoClient.db('alexandria');
+        db = mongoClient.db('alexandria');
         console.log('MongoDB Conected')
-        return db
+        return db;
 
     } catch (error) {
         console.log(error.message);
