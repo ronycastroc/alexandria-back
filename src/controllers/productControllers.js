@@ -1,4 +1,5 @@
 import mongo from "../database/db.js";
+import { ObjectId } from "mongodb";
 
 const db = await mongo();
 
@@ -6,6 +7,27 @@ const GetProducts = async (req, res) => {
   try {
     const listOfProducts = await db.collection("products").find().toArray();
     res.status(200).send(listOfProducts);
+  } catch (error) {
+    console.error(error);
+    res.sendStatus(500);
+  }
+};
+
+const GetProductWithID = async (req, res) => {
+  const { id } = req.params;
+
+  if (!id) {
+    return res
+      .status(400)
+      .send("É necessário o envio de Id para fazer a consulta");
+  }
+
+  try {
+    const book = await db.collection("products").findOne({ _id: ObjectId(id) });
+    if (!book) {
+      res.status(404).send("");
+    }
+    res.status(200).send(book);
   } catch (error) {
     console.error(error);
     res.sendStatus(500);
@@ -55,10 +77,9 @@ const FeedDB = async (req, res) => {
     },
   ];
   try {
-    // for (let i = 0; i < booksDB.length; i++) {
-    //   await db.collection("products").insertOne(booksDB[i]);
-    // }
-    booksDB.forEach(async(book)=>await db.collection("products").insertOne(book))
+    booksDB.forEach(
+      async (book) => await db.collection("products").insertOne(book)
+    );
     res.sendStatus(201);
   } catch (error) {
     console.error(error.message);
@@ -66,4 +87,4 @@ const FeedDB = async (req, res) => {
   }
 };
 
-export { GetProducts, FeedDB };
+export { GetProducts, FeedDB, GetProductWithID };
