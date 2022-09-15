@@ -37,6 +37,21 @@ const GetProductWithID = async (req, res) => {
   }
 };
 
+const GetProductsWithCategory = async (req, res) => {
+  const CategorySearched = req.params.category;
+
+  try {
+    const listOfProducts = await db
+      .collection("products")
+      .find({category: CategorySearched})
+      .toArray();
+    res.status(200).send(listOfProducts);
+  } catch (error) {
+    console.error(error);
+    res.sendStatus(500);
+  }
+};
+
 const FeedDB = async (req, res) => {
   const booksDB = [
     {
@@ -90,4 +105,4 @@ const FeedDB = async (req, res) => {
   }
 };
 
-export { GetProducts, FeedDB, GetProductWithID };
+export { GetProducts, FeedDB, GetProductWithID, GetProductsWithCategory };
