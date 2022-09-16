@@ -13,4 +13,8 @@ app.use(express.json());
 app.use(authRouter)
 app.use(productsRouters);
 
-app.listen(PORT, () => console.log(`Listening on ${PORT}`));
+//app.listen(PORT, () => console.log(`Listening on ${PORT}`));
+
+app.listen(process.env.PORT, () => {
+    console.log("Server running on port " + process.env.PORT);
+});
