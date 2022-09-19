@@ -18,6 +18,28 @@ const categorySchema = joi.object({
     .valid("Terror", "Ficção Cientifica", "Romance", "Fantasia", "Auto Ajuda"),
 });
 
+const purchaseDataSchema = joi.object({
+  books: joi.array(),
+  name: joi.string().required(),
+  phone: joi.string().required(),
+  zipCode: joi.string().required(),
+  adress: joi.string().required(),
+  number: joi.string().required(),
+  complement: joi.string(),
+  reference: joi.string(),
+  district: joi.string().required(),
+  city: joi.string().required(),
+  state: joi.string().required(),
+  country: joi.string().required(),
+  payment: joi.string().valid("credit", "debit").required(),
+  nameCard: joi.string().required(),
+  numberCard: joi.string().required(),
+  validity: joi.string().required(),
+  codeCard: joi.string().required(),
+  parcels: joi.string().required(),
+  subTotal: joi.number().required(),
+});
+
 async function validateSignUp(req, res, next) {
   const { name, email, password } = req.body;
 
@@ -64,4 +86,58 @@ async function validateCategory(req, res, next) {
   next();
 }
 
-export { validateSignUp, validateSignIn, validateCategory };
+async function validatePurcharse(req, res, next) {
+  const {
+    name,
+    phone,
+    zipCode,
+    adress,
+    number,
+    complement,
+    reference,
+    district,
+    city,
+    state,
+    country,
+    payment,
+    nameCard,
+    numberCard,
+    validity,
+    codeCard,
+    parcels,
+    subTotal,
+  } = req.body;
+
+  const validation = purchaseDataSchema.validate(req.body, {
+    abortEarly: false,
+  });
+
+  if (validation.error) {
+    const error = validation.error.details.map((value) => value.message);
+    return res.status(422).send(error);
+  }
+
+  res.locals.purchase = {
+    name,
+    phone,
+    zipCode,
+    adress,
+    number,
+    complement,
+    reference,
+    district,
+    city,
+    state,
+    country,
+    payment,
+    nameCard,
+    numberCard,
+    validity,
+    codeCard,
+    parcels,
+    subTotal,
+  };
+  next();
+}
+
+export { validateSignUp, validateSignIn, validateCategory, validatePurcharse };
