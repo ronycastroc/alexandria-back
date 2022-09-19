@@ -12,10 +12,7 @@ const signInSchema = joi.object({
 });
 
 const categorySchema = joi.object({
-  category: joi
-    .string()
-    .required()
-    .valid("Terror", "Ficção Cientifica", "Romance", "Fantasia", "Auto Ajuda"),
+  category: joi.string().required(),
 });
 
 const purchaseDataSchema = joi.object({
