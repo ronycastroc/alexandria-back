@@ -38,12 +38,11 @@ const GetProductWithID = async (req, res) => {
 };
 
 const GetProductsWithCategory = async (req, res) => {
-  const CategorySearched = req.params.category;
-
+  const categorySearched = res.locals.category;
   try {
     const listOfProducts = await db
       .collection("products")
-      .find({category: CategorySearched})
+      .find({ category: categorySearched })
       .toArray();
     res.status(200).send(listOfProducts);
   } catch (error) {

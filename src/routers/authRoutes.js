@@ -1,9 +1,13 @@
-import express from 'express';
-import { signUp, signIn } from '../controllers/authControllers.js';
+import express from "express";
+import { signUp, signIn } from "../controllers/authControllers.js";
+import {
+  validateSignUp,
+  validateSignIn,
+} from "../middlewares/joiMiddlewares.js";
 
 const router = express.Router();
 
-router.post('/auth/sign-up', signUp);
-router.post('/auth/sign-in', signIn);
+router.post("/auth/sign-up", validateSignUp, signUp);
+router.post("/auth/sign-in", validateSignIn, signIn);
 
 export default router;
