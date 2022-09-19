@@ -6,7 +6,8 @@ let date = dayjs().locale("pt-br").format("DD/MM/YYYY, HH:mm:ss");
 let db = await mongo();
 
 const createPurchase = async (req, res) => {
-  const purchase = req.locals.purchase;
+  const purchase = res.locals.purchase;
+  console.log(res.locals);
   const session = res.locals.session;
   try {
     await db.collection("purchases").insertOne({
