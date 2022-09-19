@@ -54,43 +54,43 @@ const GetProductsWithCategory = async (req, res) => {
 const FeedDB = async (req, res) => {
   const booksDB = [
     {
-      author: "Stephen King",
-      title: "Outsider",
+      author: "Nora Roberts",
+      title: "Legado",
       cover:
-        "https://m.media-amazon.com/images/P/B07D3XR7ZH.01._SCLZZZZZZZ_SX500_.jpg",
-      category: "Terror",
+        "https://m.media-amazon.com/images/I/61K8VmCBolL.jpg",
+      category: "Romance",
       price: "R$40,00",
     },
     {
-      author: "William Blatty",
-      title: "O Exorcista",
+      author: "Colleen Hoover",
+      title: "Verity",
       cover:
-        "https://m.media-amazon.com/images/P/B00F54PVGO.01._SCLZZZZZZZ_SX500_.jpg",
-      category: "Terror",
+        "https://m.media-amazon.com/images/P/B084Q6YFSS.01._SCLZZZZZZZ_SX500_.jpg",
+      category: "Romance",
       price: "R$30,00",
     },
     {
-      author: "Bram Stoker",
-      title: "Drácula",
+      author: "Jhon Bunyan",
+      title: "O Peregrino",
       cover:
-        "https://images-na.ssl-images-amazon.com/images/I/51kYAhF49CL._SX352_BO1,204,203,200_.jpg",
-      category: "Terror",
+        "https://m.media-amazon.com/images/P/B0977SWYC4.01._SCLZZZZZZZ_SX500_.jpg",
+      category: "Romance",
       price: "R$35,00",
     },
     {
-      author: "Stephen King",
-      title: "O cemitério",
+      author: "Norah Roberts",
+      title: "O despertar",
       cover:
-        "https://m.media-amazon.com/images/P/B00CEZUV26.01._SCLZZZZZZZ_SX500_.jpg",
-      category: "Terror",
+        "https://m.media-amazon.com/images/P/B0B5JTDNT4.01._SCLZZZZZZZ_SX500_.jpg",
+      category: "Romance",
       price: "R$45,00",
     },
     {
-      author: "Stephen King",
-      title: "Misery",
+      author: "Raphael Montes",
+      title: "O vilarejo",
       cover:
-        "https://m.media-amazon.com/images/P/B00JG9BCJO.01._SCLZZZZZZZ_SX500_.jpg",
-      category: "Terror",
+        "https://m.media-amazon.com/images/P/B014IHZ5X2.01._SCLZZZZZZZ_SX500_.jpg",
+      category: "Romance",
       price: "R$25,00",
     },
   ];
