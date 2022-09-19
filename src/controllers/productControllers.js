@@ -54,43 +54,43 @@ const GetProductsWithCategory = async (req, res) => {
 const FeedDB = async (req, res) => {
   const booksDB = [
     {
-      author: "Isaac Azimov",
-      title: "Eu, Robô",
+      author: "Neale Donald Walsch ",
+      title: "Conversando com Deus",
       cover:
-        "https://m.media-amazon.com/images/P/B015EED2O2.01._SCLZZZZZZZ_SX500_.jpg",
-      category: "Ficção Cientifica",
+        "https://m.media-amazon.com/images/P/B095Z6G8K4.01._SCLZZZZZZZ_SX500_.jpg",
+      category: "Auto ajuda",
       price: "R$40,00",
     },
     {
-      author: "Isaac Azimov",
-      title: "As Cavernas de Aço",
+      author: "Napoleon Hill",
+      title: "Atitude mental positiva",
       cover:
-        "https://m.media-amazon.com/images/P/B015EEAHB8.01._SCLZZZZZZZ_SX500_.jpg",
-      category: "Ficção Cientifica",
+        "https://m.media-amazon.com/images/P/B0153SZGS4.01._SCLZZZZZZZ_SX500_.jpg",
+      category: "Auto ajuda",
       price: "R$30,00",
     },
     {
-      author: "Isaac Azimov",
-      title: "Fundação",
+      author: "Shel Silverstein",
+      title: "A parte que falta",
       cover:
-        "https://m.media-amazon.com/images/P/B015EECZDQ.01._SCLZZZZZZZ_SX500_.jpg",
-      category: "Ficção Cientifica",
+        "https://images-na.ssl-images-amazon.com/images/I/41D4d0A2GYL._SX412_BO1,204,203,200_.jpg",
+      category: "Auto ajuda",
       price: "R$35,00",
     },
     {
-      author: "Isaac Azimov",
-      title: "O despertar",
+      author: "Eckhart Tolle",
+      title: "O poder do agora",
       cover:
-        "https://m.media-amazon.com/images/P/B0B5JTDNT4.01._SCLZZZZZZZ_SX500_.jpg",
-      category: "Ficção Cientifica",
+        "https://m.media-amazon.com/images/P/B00A3D0EF0.01._SCLZZZZZZZ_SX500_.jpg",
+      category: "Auto ajuda",
       price: "R$45,00",
     },
     {
-      author: "Isaac Azimov",
-      title: "O vilarejo",
+      author: "Carol Dweck",
+      title: "Mindset",
       cover:
-        "https://m.media-amazon.com/images/P/B014IHZ5X2.01._SCLZZZZZZZ_SX500_.jpg",
-      category: "Ficção Cientifica",
+        "https://m.media-amazon.com/images/P/B01NASOQGG.01._SCLZZZZZZZ_SX500_.jpg",
+      category: "Auto ajuda",
       price: "R$25,00",
     },
   ];
