@@ -54,43 +54,43 @@ const GetProductsWithCategory = async (req, res) => {
 const FeedDB = async (req, res) => {
   const booksDB = [
     {
-      author: "Nora Roberts",
-      title: "Legado",
+      author: "Isaac Azimov",
+      title: "Eu, Robô",
       cover:
-        "https://m.media-amazon.com/images/I/61K8VmCBolL.jpg",
-      category: "Romance",
+        "https://m.media-amazon.com/images/P/B015EED2O2.01._SCLZZZZZZZ_SX500_.jpg",
+      category: "Ficção Cientifica",
       price: "R$40,00",
     },
     {
-      author: "Colleen Hoover",
-      title: "Verity",
+      author: "Isaac Azimov",
+      title: "As Cavernas de Aço",
       cover:
-        "https://m.media-amazon.com/images/P/B084Q6YFSS.01._SCLZZZZZZZ_SX500_.jpg",
-      category: "Romance",
+        "https://m.media-amazon.com/images/P/B015EEAHB8.01._SCLZZZZZZZ_SX500_.jpg",
+      category: "Ficção Cientifica",
       price: "R$30,00",
     },
     {
-      author: "Jhon Bunyan",
-      title: "O Peregrino",
+      author: "Isaac Azimov",
+      title: "Fundação",
       cover:
-        "https://m.media-amazon.com/images/P/B0977SWYC4.01._SCLZZZZZZZ_SX500_.jpg",
-      category: "Romance",
+        "https://m.media-amazon.com/images/P/B015EECZDQ.01._SCLZZZZZZZ_SX500_.jpg",
+      category: "Ficção Cientifica",
       price: "R$35,00",
     },
     {
-      author: "Norah Roberts",
+      author: "Isaac Azimov",
       title: "O despertar",
       cover:
         "https://m.media-amazon.com/images/P/B0B5JTDNT4.01._SCLZZZZZZZ_SX500_.jpg",
-      category: "Romance",
+      category: "Ficção Cientifica",
       price: "R$45,00",
     },
     {
-      author: "Raphael Montes",
+      author: "Isaac Azimov",
       title: "O vilarejo",
       cover:
         "https://m.media-amazon.com/images/P/B014IHZ5X2.01._SCLZZZZZZZ_SX500_.jpg",
-      category: "Romance",
+      category: "Ficção Cientifica",
       price: "R$25,00",
     },
   ];
