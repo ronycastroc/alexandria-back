@@ -88,6 +88,7 @@ async function validateCategory(req, res, next) {
 
 async function validatePurcharse(req, res, next) {
   const {
+    books,
     name,
     phone,
     zipCode,
@@ -118,6 +119,7 @@ async function validatePurcharse(req, res, next) {
   }
 
   res.locals.purchase = {
+    books,
     name,
     phone,
     zipCode,
