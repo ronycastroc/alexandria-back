@@ -54,45 +54,47 @@ const GetProductsWithCategory = async (req, res) => {
 const FeedDB = async (req, res) => {
   const booksDB = [
     {
-      author: "J.R.R. Tolkien",
-      title: "O Senhor dos Aneis",
-      cover: "https://images-na.ssl-images-amazon.com/images/I/81SWBRKfExL.jpg",
-      category: "Fantasia",
+      author: "Neale Donald Walsch ",
+      title: "Conversando com Deus",
+      cover:
+        "https://m.media-amazon.com/images/P/B095Z6G8K4.01._SCLZZZZZZZ_SX500_.jpg",
+      category: "Auto ajuda",
       price: "R$40,00",
     },
     {
-      author: "J.R.R. Tolkien",
-      title: "O Hobbit",
+      author: "Napoleon Hill",
+      title: "Atitude mental positiva",
       cover:
-        "https://images-na.ssl-images-amazon.com/images/I/511+-lOOtsL._SY344_BO1,204,203,200_.jpg",
-      category: "Fantasia",
+        "https://m.media-amazon.com/images/P/B0153SZGS4.01._SCLZZZZZZZ_SX500_.jpg",
+      category: "Auto ajuda",
       price: "R$30,00",
     },
     {
-      author: "George R.R. Martin",
-      title: "A Guerra dos Tronos",
+      author: "Shel Silverstein",
+      title: "A parte que falta",
       cover:
-        "https://images-na.ssl-images-amazon.com/images/I/41UKpOWrZVL._SY344_BO1,204,203,200_QL70_ML2_.jpg",
-      category: "Fantasia",
+        "https://images-na.ssl-images-amazon.com/images/I/41D4d0A2GYL._SX412_BO1,204,203,200_.jpg",
+      category: "Auto ajuda",
       price: "R$35,00",
     },
     {
-      author: "Frank Herbert",
-      title: "Duna",
+      author: "Eckhart Tolle",
+      title: "O poder do agora",
       cover:
-        "https://images-na.ssl-images-amazon.com/images/I/41MRn6hy8-L._SY344_BO1,204,203,200_QL70_ML2_.jpg",
-      category: "Fantasia",
+        "https://m.media-amazon.com/images/P/B00A3D0EF0.01._SCLZZZZZZZ_SX500_.jpg",
+      category: "Auto ajuda",
       price: "R$45,00",
     },
     {
-      author: "Miguel Cervantes",
-      title: "Dom Quixote",
+      author: "Carol Dweck",
+      title: "Mindset",
       cover:
-        "https://images-na.ssl-images-amazon.com/images/I/51itDflUblL._SY344_BO1,204,203,200_QL70_ML2_.jpg",
-      category: "Fantasia",
+        "https://m.media-amazon.com/images/P/B01NASOQGG.01._SCLZZZZZZZ_SX500_.jpg",
+      category: "Auto ajuda",
       price: "R$25,00",
     },
   ];
+
   try {
     booksDB.forEach(
       async (book) => await db.collection("products").insertOne(book)

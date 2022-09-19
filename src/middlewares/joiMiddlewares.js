@@ -12,10 +12,7 @@ const signInSchema = joi.object({
 });
 
 const categorySchema = joi.object({
-  category: joi
-    .string()
-    .required()
-    .valid("Terror", "Ficção Cientifica", "Romance", "Fantasia", "Auto Ajuda"),
+  category: joi.string().required(),
 });
 
 const purchaseDataSchema = joi.object({
@@ -71,7 +68,15 @@ async function validateSignIn(req, res, next) {
 async function validateCategory(req, res, next) {
   let CategorySearched = req.params.category;
 
-  CategorySearched.replace("-", " ");
+  //CategorySearched.replace("-", " ");
+
+  if (CategorySearched === "Auto-ajuda") {
+    CategorySearched = "Auto ajuda";
+  }
+
+  if (CategorySearched === "Ficção-Cientifica") {
+    CategorySearched = "Ficção Cientifica";
+  }
 
   const schemaValidate = { category: CategorySearched };
 
@@ -81,6 +86,7 @@ async function validateCategory(req, res, next) {
     const error = validation.error.details.map((value) => value.message);
     return res.status(422).send(error);
   }
+  console.log(CategorySearched);
 
   res.locals.category = CategorySearched;
   next();
