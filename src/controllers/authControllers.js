@@ -14,6 +14,7 @@ const signUpSchema = joi.object({
 const signUp = async (req, res) => {
     const {name, email, password } = req.body;
 
+
     const validation = signUpSchema.validate(req.body, { abortEarly: false });
 
     if(validation.error) {
@@ -83,12 +84,13 @@ const signIn = async (req, res) => {
         setInterval(async () => {
             const minute = 60 * 1000
             const time = Date.now();
+            
             const users = await db.collection('sessions').find().toArray();
 
             const usersInactive = users.filter((value => (time - value.timestamp) > (minute * 60)));
 
             await db.collection('sessions').deleteMany(usersInactive.userId);
-        }, 60000);
+        }, 1800000);
 
     } else {
         res.sendStatus(401);
